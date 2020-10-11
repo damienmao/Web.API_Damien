@@ -9,7 +9,7 @@ public class PriceInfoService {
     @Autowired
     private CoingeckoClient coingeckoClient;
 
-    public ResponseEntity<CrytoPricesOutput[]> getPriceInfo(String id){
+    public ResponseEntity<CrytoPricesOutput> getPriceInfo(String id){
         return coingeckoClient.getInfoCoingecko(id);
     }
 
