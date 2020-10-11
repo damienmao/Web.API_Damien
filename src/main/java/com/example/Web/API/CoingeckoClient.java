@@ -11,9 +11,9 @@ public class CoingeckoClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    public ResponseEntity<CrytoPricesOutput[]> getInfoCoingecko(String id){
+    public ResponseEntity<CrytoPricesOutput> getInfoCoingecko(String id){
         System.out.println("API Coingecko");
-        return restTemplate.getForEntity("https://api.coingecko.com/api/v3/coins/"+id,CrytoPricesOutput[].class);
+        return restTemplate.getForEntity("https://api.coingecko.com/api/v3/coins/"+id+"?fields=id,name,symbol,last_updated",CrytoPricesOutput.class);
         //.getForEntity method retrieves resources of a given URI or URL templates
 
 
